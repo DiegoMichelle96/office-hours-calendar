@@ -1,0 +1,30 @@
+.customCell {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .customCell_10 {
+    color: green;
+  }
+  .customCell_10:hover {
+    cursor: pointer;
+  }
+  .customCell_close {
+    background-color: gray;
+    color: #fff;
+  }
+  .customCell_break {
+    background-color: lightblue;
+    color: #000;
+  }
+  .customModal__button_example {
+    width: 100%;
+    display: block;
+  }
+  .customEvent {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #C74634;
+    color: #fff;
+  }
