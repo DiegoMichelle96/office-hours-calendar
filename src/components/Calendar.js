@@ -41,26 +41,38 @@ export default class CustomCalendar extends React.Component {
 
   handleSelect = (newIntervals) => {
     let hours = Math.abs(newIntervals[0].end._d - newIntervals[0].start._d) / 36e5;
+    let isAppointmentDayRepeated = false;
+    let appointmentsInSameWeek = 0;
     const {lastUid, selectedIntervals} = this.state;
-    if(hours <= 1){     
+    if(hours <= 0.5){     
       selectedIntervals.forEach(element => {
         if(element.start._d.getDate() === newIntervals[0].start._d.getDate() && element.start._d.getMonth() === newIntervals[0].start._d.getMonth()){
-          alert('no se puede hacer citas en el mismo dia');
+          alert("Error: Registering more than one appointment in one day is prohibited");
+          isAppointmentDayRepeated = true;
+        }
+        if(moment(newIntervals[0].start._d).isoWeek() === moment(element.start._d).isoWeek()){
+          appointmentsInSameWeek ++;
         }
       });
-      const intervals = newIntervals.map( (interval, index) => {
-        return {
-          ...interval,
-          uid: lastUid + index
+      if(!isAppointmentDayRepeated){
+        if(appointmentsInSameWeek <= 1){
+          const intervals = newIntervals.map( (interval, index) => {
+            return {
+              ...interval,
+              uid: lastUid + index
+            }
+          });
+      
+          this.setState({
+            selectedIntervals: selectedIntervals.concat(intervals),
+            lastUid: lastUid + newIntervals.length
+          })
+        } else{
+          alert("Error: Maximum number of appointments (2) in the same week reached. Please try the week after");
         }
-      });
-  
-      this.setState({
-        selectedIntervals: selectedIntervals.concat(intervals),
-        lastUid: lastUid + newIntervals.length
-      })
+      }
     } else {
-      alert("Error: Registering more than two appointments in one week is prohibited");
+      alert("Error: Registering more than one appointment in one day is prohibited");
     }
     
   }
