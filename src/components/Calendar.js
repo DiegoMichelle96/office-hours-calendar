@@ -16,7 +16,101 @@ export default class CustomCalendar extends React.Component {
     super(props);
     this.state = {
       lastUid: 1,
-      selectedIntervals: []
+      selectedIntervals: [
+        {
+          start: moment("2021-10-26 08:00:00"),
+          end: moment("2021-10-26 08:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-10-27 14:00:00"),
+          end: moment("2021-10-27 14:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-11-1 13:00:00"),
+          end: moment("2021-11-1 13:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-11-8 09:00:00"),
+          end: moment("2021-11-8 09:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-11-10 13:00:00"),
+          end: moment("2021-11-10 13:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        //5
+        {
+          start: moment("2021-11-18 12:00:00"),
+          end: moment("2021-11-18 12:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-11-19 14:00:00"),
+          end: moment("2021-11-19 14:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-11-26 09:30:00"),
+          end: moment("2021-11-26 10:00:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-11-28 08:00:00"),
+          end: moment("2021-11-28 08:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-11-29 13:00:00"),
+          end: moment("2021-11-29 13:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        //10
+        {
+          start: moment("2021-11-30 12:30:00"),
+          end: moment("2021-11-30 13:00:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-12-6 10:00:00"),
+          end: moment("2021-12-6 10:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-12-8 10:00:00"),
+          end: moment("2021-12-8 10:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-12-14 10:00:00"),
+          end: moment("2021-12-14 10:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        {
+          start: moment("2021-12-16 10:00:00"),
+          end: moment("2021-12-16 10:30:00"),
+          fullname: 'test',
+          phone: 'owo',
+        },
+        //15
+      ]
     }
   }
 
